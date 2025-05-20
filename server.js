@@ -5,6 +5,7 @@ import cors from 'cors'
 import connection from './utils/connection.js'
 import routerProductos from './routers/productos.router.js'
 import routerUploads from './routers/uploads.router.js'
+import routerCarrito from './routers/carrito.router.js'
 
 const app = express()
 const PORT = process.env.PORT
@@ -22,6 +23,7 @@ app.use(cors(corsConfig))
 
 app.use('/api/v1/productos', routerProductos)
 app.use('/api/v1/uploads', routerUploads)
+app.use('/api/v1/carrito', routerCarrito)
 
 app.get('/', (req, res) => {
     res.send('Hello Word!')
