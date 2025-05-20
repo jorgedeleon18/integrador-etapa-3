@@ -4,8 +4,8 @@ const handleMongoId = (elemento) => {
 elemento = JSON.parse(JSON.stringify(elemento))
 if (Array.isArray(elemento)) {
     for (let i = 0; i < elemento.length; i++) {
-            elemento[i].id = elemento[id][clave]
-    delete elemento[id][clave]
+            elemento[i].id = elemento[i][clave]
+    delete elemento[i][clave]
     }
 } else {
     
