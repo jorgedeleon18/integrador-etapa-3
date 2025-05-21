@@ -7,8 +7,11 @@ const uploadImagen = (req, res) => {
             mensaje: 'No se cargó la imágen necesaria'
         })
     }
-res.json({
-    foto: imagen.filename
+
+    const urlCompletaBack = `${req.protocol}://${req.get('host')}/uploads/${imagen.filename}`
+
+res.status(201).json({
+    foto: urlCompletaBack
 })
 
 }
